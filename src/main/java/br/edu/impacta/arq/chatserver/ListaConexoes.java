@@ -12,5 +12,8 @@ public class ListaConexoes {
     public void adicionar(ChatServerConexao conexao) {
         conexoes.add(conexao);
     }
+    public void remover(ChatServerConexao conexao) {
+        conexoes.remove(conexao);
+    }
 }
 

@@ -8,6 +8,10 @@ public class ListaNickname {
         nicknames.add(nickname);
     }
     
+    public void remover(String nickname) {
+        nicknames.remove(nickname);
+    }
+    
     public boolean contem(String nickname) {
         return nicknames.contains(nickname);
     }

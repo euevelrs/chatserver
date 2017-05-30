@@ -34,7 +34,35 @@ public class ChatServerConexao implements Runnable {
         }
     }
     public void run() {
-        
+        String nickname = null;
+        try {
+            boolean nickValido = false;
+            while (!nickValido) {
+                nickname = entrada.readLine();
+                boolean nicknameEmUso = nicknames.contem(nickname);
+                if (nicknameEmUso) {
+                    saida.println("NOK");
+                    saida.flush();
+                }
+                else {
+                    nicknames.adicionar(nickname);
+                    saida.println("OK");
+                    saida.flush();
+                    nickValido = true;
+                }
+            }
+            String linha;
+            while (true) {
+                linha = entrada.readLine();
+                this.publicar(nickname + " diz: " + linha);
+            }
+        } catch(IOException e) {
+            conexoes.remover(this);
+            if (nickname != null) {
+                nicknames.remover(nickname);
+            }
+        }
+
     }
 }
 
