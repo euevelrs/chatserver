@@ -1,0 +1,4 @@
+br/edu/impacta/arq/chatserver/ChatServerConexao.class
+br/edu/impacta/arq/AppChatServer.class
+br/edu/impacta/arq/chatserver/ListaConexoes.class
+br/edu/impacta/arq/chatserver/ListaNickname.class
